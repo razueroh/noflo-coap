@@ -10,6 +10,7 @@ exports.getComponent = ->
   # Add input ports
   c.inPorts.add 'request',
     datatype: 'object'
+    require: yes
 
   # Add output ports
   c.outPorts.add 'response',
@@ -23,7 +24,10 @@ exports.getComponent = ->
     forwardGroups: true
   , (data, groups, out) ->
     data.on 'response', (res) ->
-      out.response.send res
-      out.message.send res.read().toString()
+      res.on 'data', ->
+        out.message.send res.payload.toString()
+        out.response.send res
+
+
   # Finally return the component instance
   c
