@@ -5,7 +5,7 @@ noflo = require 'noflo'
 exports.getComponent = ->
   c = new noflo.Component
   c.icon = 'cog'
-  c.description = 'On request event'
+  c.description = 'On response event'
 
   # Add input ports
   c.inPorts.add 'request',
