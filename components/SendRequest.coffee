@@ -8,25 +8,26 @@ exports.getComponent = ->
   c.icon = 'cog'
   c.description = 'Send request'
 
+  url = null
+  req = null
   # Add input ports
   c.inPorts.add 'url',
-    datatype: 'object'
+    datatype: 'all'
+    require: yes
+  c.inPorts.add 'start',
+    datatype: 'bang'
     require: yes
 
   # Add output ports
   c.outPorts.add 'request',
     datatype: 'object'
 
-  noflo.helpers.WirePattern c,
-    in: 'url'
-    out: 'request'
-    forwardGroups: true
-  , (data, groups, out) ->
-
-    req = coap.request data
-
+  c.inPorts.url.on 'data', (payload) ->
+    url = payload
+  c.inPorts.start.on 'data', ->
+    req = coap.request url
     req.end ->
-      out.send req
+      c.outPorts.request.send req
 
   # Finally return the component instance
   c
