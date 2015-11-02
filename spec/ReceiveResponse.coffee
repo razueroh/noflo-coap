@@ -10,11 +10,11 @@ describe 'ReceiveResponse component', ->
     c = ReceiveResponse.getComponent()
     request = noflo.internalSocket.createSocket()
     response = noflo.internalSocket.createSocket()
-    request = noflo.internalSocket.createSocket()
+    message = noflo.internalSocket.createSocket()
 
     c.inPorts.request.attach request
     c.outPorts.response.attach response
-    c.outPorts.message.attach request
+    c.outPorts.message.attach message
 
   describe 'when instantiated', ->
     it 'should have a "request" inport', ->
