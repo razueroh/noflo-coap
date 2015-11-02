@@ -27,13 +27,11 @@ exports.getComponent = ->
     data.on 'request', (request, response) ->
       observe = false
       header = request.headers['Observe']
-      console.log "Req " + header
       if header is 0
         observe = true
       else
         observe = false
 
-      console.log "obs " + observe
       out.observe.send observe
       out.request.send request
       out.response.send response

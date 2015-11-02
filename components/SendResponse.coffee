@@ -31,12 +31,9 @@ exports.getComponent = ->
   c.inPorts.response.on 'data', (payload) ->
     response = payload
   c.inPorts.start.on 'data', ->
-    console.log "Resp: " + observe
     if observe isnt true
-      console.log "Resp no observe: " + observe
       response.end message
     else
-      console.log "Resp observe: " + observe
       response.write message
       c.outPorts.out.send true
 
