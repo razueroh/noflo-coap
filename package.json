@@ -38,7 +38,12 @@
   },
   "keywords": [
     "noflo",
-    "ecosystem:noflo"
+    "coap",
+    "iot",
+    "internet of things",
+    "m2m",
+    "client",
+    "server"
   ],
   "noflo": {
     "components": {
