@@ -30,7 +30,7 @@ describe 'SendResponse component', ->
       chai.expect(c.inPorts.observe).to.be.an 'object'
     it 'should have a "response" inport', ->
       chai.expect(c.inPorts.response).to.be.an 'object'
-    it 'should have a "start" outport', ->
+    it 'should have a "start" inport', ->
       chai.expect(c.inPorts.start).to.be.an 'object'
     it 'should have a "out" outport', ->
       chai.expect(c.outPorts.out).to.be.an 'object'

@@ -20,7 +20,7 @@ describe 'SendRequest component', ->
   describe 'when instantiated', ->
     it 'should have a "url" inport', ->
       chai.expect(c.inPorts.url).to.be.an 'object'
-    it 'should have a "start" outport', ->
+    it 'should have a "start" inport', ->
       chai.expect(c.inPorts.start).to.be.an 'object'
     it 'should have a "request" outport', ->
       chai.expect(c.outPorts.request).to.be.an 'object'
