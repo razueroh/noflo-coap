@@ -1,17 +1,15 @@
 noflo = require 'noflo'
+coap = require 'coap'
 
 # @runtime noflo-nodejs
 
 exports.getComponent = ->
   c = new noflo.Component
   c.icon = 'cog'
-  c.description = 'Send response'
+  c.description = 'Send request'
 
   # Add input ports
   c.inPorts.add 'url',
-    datatype: 'object'
-    require: yes
-  c.inPorts.add 'coap',
     datatype: 'object'
     require: yes
 
@@ -20,13 +18,12 @@ exports.getComponent = ->
     datatype: 'object'
 
   noflo.helpers.WirePattern c,
-    in: 'coap'
-    params: 'url'
+    in: 'url'
     out: 'request'
     forwardGroups: true
   , (data, groups, out) ->
 
-    req = data.request c.params.url
+    req = coap.request data
 
     req.end ->
       out.send req
