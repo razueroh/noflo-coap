@@ -1,6 +1,6 @@
 {
   "name": "noflo-coap",
-  "description": "The best project ever.",
+  "description": "CoAP for NoFlo",
   "version": "0.1.0",
   "author": {
     "name": "Rafael Azuero Hurtado",
