@@ -23,3 +23,16 @@ InPort | observe | `boolean` | Send a CoAP observe message, allowing the streami
 InPort | pathname | `string` | Request path. Defaults to `"/"`
 InPort | query | `string` | Query string. Defaults to `''`
 OutPort | url | `object` | Object with request parameters
+
+
+### CreateServer
+
+Create CoAP server
+
+Port | Name | Datatype | Description
+-----|------|----------|-------------
+InPort | port | `number` | Port of remote server. Defaults to `5683`
+InPort | hostname | `string` | Domain name or IP address of the server. Defaults to `localhost`
+InPort | type | `string` |  Create IPv4 connections (`udp4`) or IPv6 connections (`udp6`). Defaults to `udp4`.
+InPort | proxy | `boolean` | Behave like a proxy for incoming requests containing the `Proxy-Uri` header. Defaults to `false`
+OutPort | out | `object` | Object with server parameters
