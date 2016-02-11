@@ -19,7 +19,7 @@ InPort | hostname | `string` | Domain name or IP address of the server. Defaults
 InPort | port | `number` | Port of remote server. Defaults to `5683`
 InPort | method | `string` | A string specifying the CoAP request method. Defaults to `'GET'`
 InPort | confirmable | `boolean` | Send a CoAP confirmable message (CON). Defaults to `true`
-InPort | observe | `boolean` | send a CoAP observe message, allowing the streaming of updates from the server. Defaults to `false`
+InPort | observe | `boolean` | Send a CoAP observe message, allowing the streaming of updates from the server. Defaults to `false`
 InPort | pathname | `string` | Request path. Defaults to `"/"`
 InPort | query | `string` | Query string. Defaults to `''`
 OutPort | url | `object` | Object with request parameters
