@@ -1,5 +1,5 @@
 # CoAP for NoFlo
-[![Build Status](https://secure.travis-ci.org/razueroh/noflo-coap.png?branch=master)](http://travis-ci.org/razueroh/noflo-coap)
+[![Build Status](https://secure.travis-ci.org/razueroh/noflo-coap.png?branch=master)](http://travis-ci.org/razueroh/noflo-coap) [![npm version](https://badge.fury.io/js/noflo-coap.svg)](https://badge.fury.io/js/noflo-coap)
 
 This package provides utility components to create clients and servers for CoAP in the NoFlo Node.js runtime. Based on [node-coap](https://www.npmjs.com/package/coap).
 
