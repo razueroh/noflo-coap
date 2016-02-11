@@ -56,4 +56,4 @@ Port | Name | Datatype | Description
 -----|------|----------|-------------
 InPort | request | `object` | Object with request parameters
 OutPort | response | `string` | Raw data received from the server
-OutPort | message | `string` | Extract the payload of the data received from the server
+OutPort | message | `string` | Payload of the data received from the server
