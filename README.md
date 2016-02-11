@@ -36,3 +36,14 @@ InPort | hostname | `string` | Domain name or IP address of the server. Defaults
 InPort | type | `string` |  Create IPv4 connections (`udp4`) or IPv6 connections (`udp6`). Defaults to `udp4`.
 InPort | proxy | `boolean` | Behave like a proxy for incoming requests containing the `Proxy-Uri` header. Defaults to `false`
 OutPort | out | `object` | Object with server parameters
+
+### ReceiveRequest
+
+On request event
+
+Port | Name | Datatype | Description
+-----|------|----------|-------------
+InPort | server | `object` | Object with server parameters
+OutPort | observe | `boolean` | Prepare the server for streaming data to the client. Defaults to `false`.
+OutPort | response | `object` | Object with response parameters
+OutPort | request | `object` | Object with request parameters
