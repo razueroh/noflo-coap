@@ -67,3 +67,15 @@ Port | Name | Datatype | Description
 InPort | url | `all` | `object` or `string`. If it is an `object`, this should have the properties described [here](https://www.npmjs.com/package/coap#requesturl). (You can use the ConfigRequest component to build an `url` object with a few basic properties). If it is a `string`, this should be of the form `'coap://<hostname>:<port>/<query>'`
 InPort | start | `bang` | Signal to send the request
 OutPort | request | `object` | Object with request parameters
+
+### SendResponse
+
+Send response
+
+Port | Name | Datatype | Description
+-----|------|----------|-------------
+InPort | message | `string` | Payload sent to the client
+InPort | observe | `boolean` | Prepare the server for streaming data to the client. Defaults to `false`
+InPort | response | `object` | Object with response parameters
+InPort | start | `bang` | Signal to send the response
+OutPort | out | `bang` | It fires if the message was sent and `observe` is `true`. Use it to send the next message to the client
