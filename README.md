@@ -47,3 +47,13 @@ InPort | server | `object` | Object with server parameters
 OutPort | observe | `boolean` | Prepare the server for streaming data to the client. Defaults to `false`.
 OutPort | response | `object` | Object with response parameters
 OutPort | request | `object` | Object with request parameters
+
+### ReceiveResponse
+
+On response event
+
+Port | Name | Datatype | Description
+-----|------|----------|-------------
+InPort | request | `object` | Object with request parameters
+OutPort | response | `string` | Raw data received from the server
+OutPort | message | `string` | Extract the payload of the data received from the server
