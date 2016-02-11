@@ -11,7 +11,7 @@ This package provides utility components to create clients and servers for CoAP 
 
 ### ConfigRequest
 
-Create an object with request parameters
+Create an object with a few request properties
 
 Port | Name | Datatype | Description
 -----|------|----------|-------------
@@ -22,7 +22,7 @@ InPort | confirmable | `boolean` | Send a CoAP confirmable message (CON). Defaul
 InPort | observe | `boolean` | Send a CoAP observe message, allowing the streaming of updates from the server. Defaults to `false`
 InPort | pathname | `string` | Request path. Defaults to `"/"`
 InPort | query | `string` | Query string. Defaults to `''`
-OutPort | url | `object` | Object with request parameters
+OutPort | url | `object` | Object with request properties
 
 
 ### CreateServer
