@@ -79,3 +79,10 @@ InPort | observe | `boolean` | Prepare the server for streaming data to the clie
 InPort | response | `object` | Object with response parameters
 InPort | start | `bang` | Signal to send the response
 OutPort | out | `bang` | It fires if the message was sent and `observe` is `true`. Use it to send the next message to the client
+
+## Examples
+
+Name | Gist | Flowhub
+-----|------|--------
+CoAP Client | [code](https://gist.github.com/razueroh/2a062aa901601c2f6648) | [example](https://app.flowhub.io/#example/2a062aa901601c2f6648)
+CoAP Server | [code](https://gist.github.com/razueroh/257190cb2e2d62a0328d) | [example](https://app.flowhub.io/#example/257190cb2e2d62a0328d)
