@@ -15,15 +15,13 @@ Create an object with a few request properties
 
 Port | Name | Datatype | Description
 -----|------|----------|-------------
-InPort | hostname | `string` | Domain name or IP address of the server. Defaults to `localhost`
-InPort | port | `number` | Port of remote server. Defaults to `5683`
+InPort | href | `string` | String specifying the URL for the request. It should be of the form `'coap://<hostname>:<port>/<path>?<query>'`
 InPort | method | `string` | A string specifying the CoAP request method. Defaults to `'GET'`
 InPort | confirmable | `boolean` | Send a CoAP confirmable message (CON). Defaults to `true`
 InPort | observe | `boolean` | Send a CoAP observe message, allowing the streaming of updates from the server. Defaults to `false`
-InPort | pathname | `string` | Request path. Defaults to `"/"`
-InPort | query | `string` | Query string. Defaults to `''`
 OutPort | url | `object` | Object with request properties
 
+You can use [noflo-objects](https://www.npmjs.com/package/noflo-objects) to add more properties to the `url` object.
 
 ### CreateServer
 

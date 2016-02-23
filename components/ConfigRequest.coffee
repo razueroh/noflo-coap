@@ -1,5 +1,5 @@
 noflo = require 'noflo'
-
+url = require 'url'
 # @runtime noflo-nodejs
 
 exports.getComponent = ->
@@ -8,13 +8,8 @@ exports.getComponent = ->
   c.description = 'Create object with request parameters'
 
   # Add input ports
-  c.inPorts.add 'hostname',
+  c.inPorts.add 'href',
     datatype: 'string'
-    default: 'localhost'
-    require: yes
-  c.inPorts.add 'port',
-    datatype: 'number'
-    default: 5683
     require: yes
   c.inPorts.add 'method',
     datatype: 'string'
@@ -29,41 +24,27 @@ exports.getComponent = ->
     datatype: 'boolean'
     default: false
     require: yes
-  c.inPorts.add 'pathname',
-    datatype: 'string'
-    default: '/'
-    require: yes
-  c.inPorts.add 'query',
-    datatype: 'string'
-    default: ''
-    require: yes
+
   # Add output ports
   c.outPorts.add 'url',
     datatype: 'object'
 
   noflo.helpers.WirePattern c,
-    in: [
-      'hostname'
-      'port'
+    in: 'href'
+    params: [
       'method'
       'confirmable'
       'observe'
-      'pathname'
-      'query'
     ]
     out: 'url'
     forwardGroups: true
   , (data, groups, out) ->
-    req =
-      hostname: data.hostname
-      port: data.port
-      method: data.method
-      confirmable: data.confirmable
-      observe: data.observe
-      pathname: data.pathname
-      query: data.query
+    options = url.parse(data)
+    options.method = c.params.method
+    options.confirmable = c.params.confirmable
+    options.observe = c.params.observe
 
-    out.send req
+    out.send options
 
   # Finally return the component instance
   c
