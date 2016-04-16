@@ -1,7 +1,7 @@
 {
   "name": "noflo-coap",
   "description": "CoAP for NoFlo",
-  "version": "v0.1.2",
+  "version": "0.2.0",
   "author": {
     "name": "Rafael Azuero Hurtado",
     "email": "razueroh@gmail.com"
